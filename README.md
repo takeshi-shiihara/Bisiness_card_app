@@ -1,9 +1,29 @@
 # README
 
-##usersテーブル
-
+##cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|campany|string||
+|position_id|references|foreign_key:true|
+|name|string|
+
+#Association
+has_many:images
+
+
+##imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|card_id|reference|null:false|
+
+#Association
+belongs_to:card
+
+##usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|
 
 
 
