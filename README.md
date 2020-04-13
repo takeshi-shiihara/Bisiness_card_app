@@ -1,32 +1,44 @@
 # README
 
-##cardsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|campany|string||
-|position_id|references|foreign_key:true|
-|name|string|
-
-#Association
-has_many:images
-
-
-##imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|card_id|reference|null:false|
-
-#Association
-belongs_to:card
-
-##usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
-|
+|password|string|null:false|
 
 
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|campany|string|null:false|
+|position_id|references|foreign_key:true|
+|name|string|null:false|
+|phone_number|integer|null:false|
+|e-mail|string|null:false|
 
+### Association
+has_many:images
+belongs_to:position
+
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|card_id|references|null:false|
+
+### Association
+belongs_to:card
+
+
+## positionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|position|string||
+|ancestry|string|index:true|
+
+### Association
+has_many:card
+has_ancestry
 
 
 
